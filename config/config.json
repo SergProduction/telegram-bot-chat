@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "intelegence",
+    "password": "intelegence",
+    "database": "intelegence",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "timestamps": false
+  },
+  "test": {
+    "username": "intelegence",
+    "password": "intelegence",
+    "database": "intelegence",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "timestamps": false
+  },
+  "production": {
+    "username": "intelegence",
+    "password": "intelegence",
+    "database": "intelegence",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "timestamps": false
+  }
+}
