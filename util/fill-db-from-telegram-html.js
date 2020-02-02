@@ -3,15 +3,10 @@ const path = require('path')
 
 const models = require('../models')
 const { htmlParse } = require('./telegram-html-parse')
+const { progressLog } = require('./progress-log')
 
 
 const delay = time => new Promise(r => setTimeout(r, time))
-
-const progressLog = (text) => {
-    process.stdout.clearLine()
-    process.stdout.cursorTo(0)
-    process.stdout.write(text)
-}
 
 
 const readFile = (filePath) => new Promise((resolve, reject) => {
