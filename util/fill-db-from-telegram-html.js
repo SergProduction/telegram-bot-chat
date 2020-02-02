@@ -44,7 +44,7 @@ async function wtireBD(htmlFiles) {
     progressLog(`file - ${i}. messages in this file - ${messages.length}`)
 
     try {
-      await models.user.bulkCreate(messages, { hooks: false })
+      await models.message.bulkCreate(messages, { hooks: false })
     } catch (err) {
       console.log(`/nerror in file ${i}. ${fileNameHtml}`)
       console.error(err)
