@@ -1,26 +1,32 @@
 {
   "development": {
-    "username": "intelegence",
-    "password": "intelegence",
-    "database": "intelegence",
+    "username": "nlp",
+    "password": "nlp",
+    "database": "nlp_random",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "timestamps": false
+    "timestamps": false,
+    "logging": false,
+    "operatorsAliases": false
   },
   "test": {
-    "username": "intelegence",
-    "password": "intelegence",
-    "database": "intelegence",
+    "username": "nlp",
+    "password": "nlp",
+    "database": "nlp_random",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "timestamps": false
+    "timestamps": false,
+    "logging": false,
+    "operatorsAliases": false
   },
   "production": {
-    "username": "intelegence",
-    "password": "intelegence",
-    "database": "intelegence",
+    "username": "nlp",
+    "password": "nlp",
+    "database": "nlp_random",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "timestamps": false
+    "timestamps": false,
+    "logging": false,
+    "operatorsAliases": false
   }
 }

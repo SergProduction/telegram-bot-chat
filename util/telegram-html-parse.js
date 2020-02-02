@@ -1,18 +1,16 @@
-const fs = require('fs')
-const path = require('path')
 const cheerio = require('cheerio')
 
-const models = require('./models')
+/*
+type Message = {
+  message_id: Number,
+  name: String,
+  text: String,
+  reply: Number | null, // message_id
+  date: Date,
+}
 
-const readFile = (filePath) => new Promise((resolve, reject) => {
-  fs.readFile(filePath, (err, data) => {
-    if (err) reject(err)
-    resolve(data)
-  })
-})
-
-
-
+htmlParse :: html -> Message
+*/
 const htmlParse = (html) => {
   const $ = cheerio.load(html)
 
@@ -86,28 +84,4 @@ const htmlParse = (html) => {
   return messagesText
 }
 
-
-const htmlFiles = fs.readdirSync('./telegram-html')
-  .filter(fileOrDir => path.parse(fileOrDir).ext === '.html')
-
-
-console.log('htmlFiles', htmlFiles.length)
-
-
-async function wtireBD(htmlFiles) {
-  for (const fileNameHtml of htmlFiles) {
-    const htmlBuf = await readFile(path.join('./telegram-html', fileNameHtml))
-
-    const html = htmlBuf.toString()
-
-    const messages = htmlParse(html)
-
-    console.log(messages.length, messages[0], fileNameHtml)
-
-    await Promise.all(messages.map(message => (
-      models.User.findOrCreate({ where: { message_id: message.message_id }, defaults: message })
-    )))
-  }
-}
-
-wtireBD(htmlFiles)
+module.exports = { htmlParse }
